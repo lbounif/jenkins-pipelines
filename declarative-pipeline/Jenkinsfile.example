@@ -1,0 +1,27 @@
+// Jenkinsfile (Declarative Pipeline)
+pipeline { //Declarative Pipeline-specific syntax that defines a "block" 
+           //containing all content and instructions for executing 
+           //the entire Pipeline.
+    
+    agent any //Declarative Pipeline-specific syntax that instructs Jenkins 
+              //to allocate an executor (on a node) and workspace for the entire Pipeline.
+    stages {
+        stage('Build') { 
+            steps { //the steps to be run in this stage.
+                sh 'make' //executes the given shell command.
+            }
+        }
+        stage('Test'){
+            steps { //the steps to be run in this stage.
+                sh 'make check'
+                junit 'reports/**/*.xml' //Pipeline step (provided by the JUnit 
+                                        //plugin) for aggregating test reports.
+            }
+        }
+        stage('Deploy') {
+            steps { //the steps to be run in this stage.
+                sh 'make publish'
+            }
+        }
+    }
+}
