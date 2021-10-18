@@ -1,0 +1,12 @@
+pipeline {
+    agent any //agent instructs Jenkins to allocate an executor 
+            //(on any available agent/node in the Jenkins environment) 
+            //and workspace for the entire Pipeline.
+    stages {
+        stage('Stage 1') {
+            steps {
+                echo 'Hello world!' 
+            }
+        }
+    }
+}
