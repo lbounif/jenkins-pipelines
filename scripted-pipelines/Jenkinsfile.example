@@ -1,0 +1,24 @@
+//Jenkinsfile (Scripted Pipeline)
+node {  //Execute this Pipeline or any of its stages, on any available agent.
+    def myvar        //define a variable myvar
+    stage('Build') { //Defines the "Build" stage. stage blocks are optional 
+                     //in Scripted Pipeline syntax. However, implementing 
+                     //stage blocks in a Scripted Pipeline provides clearer 
+                     //visualization of each `stage’s subset of tasks/steps 
+                     //in the Jenkins UI.
+        //           //Perform some steps related to the "Build" stage.
+    }
+    stage('Test') {  //Defines the "Test" stage.
+        //           //Perform some steps related to the "Test" stage.
+    }
+    stage('Deploy') {//Defines the "Deploy" stage.
+        //           //Perform some steps related to the "Deploy" stage.
+    }
+}
+	
+
+
+
+
+
+
